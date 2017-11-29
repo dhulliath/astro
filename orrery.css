@@ -1,0 +1,75 @@
+#ringZodiac {
+    /*transform-origin: 5000px 5000px;*/
+}
+
+#ringZodiac #planets .block {
+    stroke-width: 20;
+    fill: black;
+}
+#ringZodiac .label {
+    font-family: Arial Black, Arial Bold, Gadget, sans-serif;
+}
+
+#ringZodiac #signs .label {
+    /*font-family: Arial Black, Arial Bold, Gadget, sans-serif;*/
+    font-size: 175;
+    font-weight: 900;
+    text-anchor: middle;
+    font-variant: small-caps;
+    letter-spacing: 50px;
+    stroke-width: 10;
+    /*filter: url(#boldenText);*/
+}
+
+#ringZodiac #houses .label {
+    font-size: 120;
+    stroke: black;
+    text-anchor: middle;
+    font-variant: small-caps;
+    letter-spacing: 25px;
+}
+#ringZodiac #houses .block {
+    stroke-width: 20;
+    fill: black;
+}
+
+#ringZodiac #signs .block {
+    stroke-width: 30;
+}
+
+#ringZodiac #signs .glyph {
+    stroke-width: 20;
+}
+
+#ringZodiac #aspects path {
+    stroke-width: 10;
+    /*stroke-dasharray: 100,100;*/
+    stroke-linecap: round;
+    fill: none;
+}
+#ringZodiac #aspects path.Conjunction {
+    stroke: yellow;
+}
+#ringZodiac #aspects path.Opposition {
+    stroke: orange;
+}
+#ringZodiac #aspects path.Square {
+    stroke: red;
+}
+#ringZodiac #aspects path.Trine {
+    stroke: lightblue;
+}
+#ringZodiac #aspects path.Sextile {
+    stroke: lightgreen;
+}
+#signs .duplicated .glyph,
+#signs .duplicated .label,
+#signs .intercepted .block {
+    filter: saturate(150%);
+}
+
+#signs .intercepted .glyph,
+#signs .intercepted .label,
+#signs .duplicated .block {
+    filter: saturate(50%);
+}
