@@ -1,5 +1,11 @@
-You are a thinker (air) rather than a doer. You are able to turn your hand to new things easily (versatile). You are a good communicator, but might tend to jump from one subject to another (variable, mutable). You can, however, be logical (air) rather than emotional. You may tend to make many short journeys, going here and there in the locality. Or you may be restless and itching to do something. You may be witty and  a good speaker, (air). You may be a different person for different people, changing your communication to fit the other person (Twins).<br/>
-<br/>
-What is important to you is to communicate and to be informed through the six senses. You value reasoning and words, rather than feelings.<br/>
-<br/>
-An archetype is the journalist who goes and sees and informs others what he has seen.
+{
+    "paragraphs": [
+        "With the Sun in Gemini, the urge for self-expression is strong. These natives are often just as interested in collecting information as they are in sharing it. Curious to a fault, Geminis have a finger in every pie. Solar Geminis are flexible and changeable people. Their ability to adapt quickly to new situations generally gains them plenty of friends and social contacts. Usually quite clever and witty, Geminis enjoy intellectual conversations and they are easily bored if they are not getting enough mental stimulation.",
+        "Often quite adept at fitting in with others, Geminis easily adopt the moods of those around them. They are friends to people from all walks of life, and are not easily intimidated. Their ability to detach themselves can make Geminis very objective and observant, but a little difficult to get close to. Although they often have many friends, intimacy doesn’t come as easily to Solar Geminis.",
+        "It can be difficult to know what Gemini really feels at any given moment. They are often very impressionable and scattered. There is usually a nervous air to Geminis that can make more personal characters a little uneasy. It is not always intuitive to trust Geminis to be loyal or to keep secrets.",
+        "Geminis often flit about, moving quickly and keeping busy every step of the way. Many people with this position of the Sun have gained quite a bit of knowledge in their lifetimes, but they don’t often possess specialized knowledge. This is because Geminis have relatively short attention spans. Restlessness is especially common with this position of the Sun.",
+        "Usually quite affable, Geminis enjoy the “light” side of life. This tendency to take things lightly makes them quite pleasing to be around; but it can be maddening to people seeking support on the deeper issues in life.",
+        "Geminis are both interesting and interested. Their wit can be dazzling and their changeability dizzying. At the very least, Geminis will seldom bore you."
+    ],
+    "source": "https://cafeastrology.com/index/suninsigns.html"
+}

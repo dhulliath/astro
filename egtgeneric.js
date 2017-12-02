@@ -14,7 +14,7 @@ const egtSVG = {
         return gradient;
     },
     'createGradientDef': function (type, data, attrs = []) {
-        //attrs['id'] = id;
+        if (['linear','radial'].indexOf(type) < 0) {return null;}
         var gradient = egtGeneric.createElementWithAttrNS(NAMESPACES.svg, type + 'Gradient', attrs);
         for (stop in data) {
             gradient.appendChild(egtGeneric.createElementWithAttrNS(NAMESPACES.svg, 'stop', data[stop]));
@@ -61,6 +61,9 @@ const egtGeneric = {
         try {
         var apiHTTP = new XMLHttpRequest();
         apiHTTP.open("GET", fileTarget, true);
+        if (callbackOptions['mimeType']) {
+            apiHTTP.overrideMimeType(callbackOptions['mimeType']);
+        }
         //apiHTTP.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         apiHTTP.onreadystatechange = function () {
             if (apiHTTP.readyState == 4 && apiHTTP.status == 200) {

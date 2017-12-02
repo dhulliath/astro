@@ -25,23 +25,36 @@ var AstroEngineInterpret = function (parentQuery) {
         objectDOM[planet][category]['header'].innerHTML = header;
         objectDOM[planet][category]['body'].innerHTML = content;
     };
-    var _updateDOM = function (data, callbackOptions) {
+    var _updateDOM = function (data, options) {
         if (data) {
-            _updateText(callbackOptions['planet'], callbackOptions['type'], callbackOptions['header'], data);
-            objectDOM[callbackOptions['planet']][callbackOptions['type']]['block'].classList.remove('hidden');
+            let data2, render;
+            try {
+                data2 = JSON.parse(data);
+                render = '<p>' + data2['paragraphs'].join('</p><p>') + '</p><p><a href="' + data2['source'] + '">source</a></p>';
+            } catch (e) {
+                render = data;
+            }
+                        options['targetObject']['header'].innerHTML = options['header'];
+            options['targetObject']['body'].innerHTML = render;
+            options['targetObject']['block'].classList.remove('hidden');
         } else {
-            objectDOM[callbackOptions['planet']][callbackOptions['type']]['block'].classList.add('hidden');
+            options['targetObject']['block'].classList.add('hidden');
+        }
+    };
+    var _clearAspects = function(planet) {
+        for (aspectEntry in objectDOM[planet]['aspects']) {
+            objectDOM[planet]['aspects'][aspectEntry]['block'].remove();
+            delete objectDOM[planet]['aspects'][aspectEntry];
         }
     };
     var _addAspect = function (planet, planet2, aspect) {
-
-        objectDOM[planet][aspect + planet2] = _createGenericTextBlock('aspect' + aspect, aspect + ' with ' + planet2)
-        objectDOM[planet]['children'].appendChild(objectDOM[planet][aspect + planet2]['block']);
-
+        if (!objectDOM[planet]['aspects']) {objectDOM[planet]['aspects'] = [];}
+        objectDOM[planet]['aspects'][aspect + planet2] = _createGenericTextBlock('aspect' + aspect, aspect + ' with ' + planet2)
+        objectDOM[planet]['children'].appendChild(objectDOM[planet]['aspects'][aspect + planet2]['block']);
         egtGeneric.getFileAndCall(egtGeneric.getCurrentDirectory() + "/data/aspects/" + aspect + '_' + planet + '_' + planet2 + ".txt", _updateDOM, {
-            'planet': planet,
-            'type': aspect + planet2,
-            'header': DATA['render']['aspectData'][aspect]['label'] + ' with ' + planet2
+            'targetObject': objectDOM[planet]['aspects'][aspect + planet2],
+            'header': DATA['render']['aspectData'][aspect]['label'] + ' with ' + planet2,
+            'mimeType': 'text/plain'
         });
     };
     var _updateChart = function (data) {
@@ -49,16 +62,16 @@ var AstroEngineInterpret = function (parentQuery) {
             if (DATA['render']['planetDescs'][planet]) {
                 var sign = data['Objects'][planet]['sign']
                 var house = Math.floor(data['Objects'][planet]['house']);
-                egtGeneric.getFileAndCall(egtGeneric.getCurrentDirectory() + "/data/" + planet + "_" + sign + ".txt", this.updateDOM, {
-                    'planet': planet,
-                    'type': 'zodiac',
-                    'header': sign
+                egtGeneric.getFileAndCall(egtGeneric.getCurrentDirectory() + "/data/" + planet + "_" + sign + ".txt", _updateDOM, {
+                    'targetObject': objectDOM[planet]['zodiac'],
+                    'header': sign,
+                    'mimeType': 'application/json'
                 });
                 if (DATA['render']['planetDescs'][planet]['showHouse']) {
-                    egtGeneric.getFileAndCall(egtGeneric.getCurrentDirectory() + "/data/" + planet + "_house" + house + ".txt", this.updateDOM, {
-                        'planet': planet,
-                        'type': 'house',
-                        'header': 'House ' + egtGeneric.romanizeNumber(house)
+                    egtGeneric.getFileAndCall(egtGeneric.getCurrentDirectory() + "/data/" + planet + "_house" + house + ".txt", _updateDOM, {
+                        'targetObject': objectDOM[planet]['house'],
+                        'header': 'House ' + egtGeneric.romanizeNumber(house),
+                        'mimeType': 'text/plain'
                     });
                 }
                 if (DATA['render']['planetDescs'][planet]['showRetrograde']) {
@@ -69,16 +82,17 @@ var AstroEngineInterpret = function (parentQuery) {
                         } else {
                             retQuery = planet + "_Retrograde.txt";
                         }
-                        egtGeneric.getFileAndCall(egtGeneric.getCurrentDirectory() + "/data/" + retQuery, this.updateDOM, {
-                            'planet': planet,
-                            'type': 'retrograde',
-                            'header': 'Retrograde'
+                        egtGeneric.getFileAndCall(egtGeneric.getCurrentDirectory() + "/data/" + retQuery, _updateDOM, {
+                            'targetObject': objectDOM[planet]['retrograde'],
+                            'header': 'Retrograde',
+                            'mimeType': 'text/plain'
                         });
                         objectDOM[planet]['retrograde']['block'].classList.remove('hidden');
                     } else {
                         objectDOM[planet]['retrograde']['block'].classList.add('hidden');
                     }
                 }
+                _clearAspects(planet);
                 for (planet2 in data['Aspects'][planet]) {
                     if (DATA['render']['planetDescs'][planet2]) {
                         var aspQueryType = data['Aspects'][planet][planet2]['type'];
@@ -143,6 +157,7 @@ var AstroEngineInterpret = function (parentQuery) {
     };
 
     this.addAspect = _addAspect;
+    this.clearAspects = _clearAspects;
     this.drawTable = _drawTable;
     this.loadData = _loadData;
     this.updateChart = _updateChart;

@@ -1,5 +1,9 @@
-<p>
-<p>You are deep and intense (intense and secretive) and hide your intentions or you are unaware of them, however, you enjoy digging into the depths of other people and finding their secrets or hidden motives. You may be driven (passive) by deep, hidden emotions (secretive, water). You may be slow to get started on things (stable), but once started you can become a powerful torrent, which is difficult for others, and for you to stop (fixed). You are more likely to be driven (passive) by deep emotions (water) than to follow your true self.</p>
-<p>What is important to you is digging beneath the surface and finding the hidden truth. You do not take things at face value. However, you keep your own personal feeling secret from others.</p>
-<p>An archetype of the detective, seeking the truth which is hidden, perhaps by lies.</p>
-</p>
+{
+    "paragraphs" : [
+        "Scorpios are known for their intensity. They are determined folk that absolutely throw themselves into whatever they do — but getting them to commit to something is rarely an easy task. In fact, it’s better not to even try to “get them” to do anything. Solar Scorpios absolutely have their own mind. And, their primary motivation is unlikely to be prestige (like their Capricorn friends), or even authority (Leos can have that, too)–it’s real power. Their power can absolutely be of the “behind the scenes” variety, just as long as they have it.",
+        "To others, Scorpios seem to have plenty of willpower. They probably do. Scorpios do know what they want, and they won’t go out and grab it at the wrong moment. They simply sit back, watch (quite expertly), and then get it only when the moment is just right. This apparent patience is simply their powerful skills at strategy at work.",
+        "Scorpio isn’t afraid of getting their hands (their bodies, their minds) dirty. The darker side of life intrigues them, and they’re always ready to investigate.",
+        "Scorpios simply never give up. They have tremendous staying power. They’re not in the slightest intimidated by anybody or anything. Confrontations are not a problem. In fact, talk to any Scorpio about their lives, and you’ll probably be in awe at all they’ve gone through. Trauma seems to follow them wherever they go. When Scorpio learns optimism, instead of expecting the worst, they’ll find that they possess amazing regenerative powers — the power to heal, create, and transform."
+    ],
+    "source": "https://cafeastrology.com/articles/suninsigns_page2.html"
+}
