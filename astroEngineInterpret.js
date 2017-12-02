@@ -101,8 +101,9 @@ var AstroEngineInterpret = function (parentQuery) {
                 var commonObject = [];
 
                 objectDOM['_parent'].appendChild(commonObject['group'] = egtGeneric.createElementWithAttr('div', {
-                    'id': baseID + keyRender,
-                    'class': 'objectInterpretation'
+                    /*'id': baseID + keyRender,*/
+                    'class': 'objectInterpretation',
+                    'style': 'display: block; width: 100%; margin-bottom: 20px;'
                 }));
                 commonObject['group'].appendChild(commonObject['objectGroup'] = egtGeneric.createElementWithAttr('div', {
                     'class': 'headerContainer'

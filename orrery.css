@@ -1,5 +1,8 @@
-#ringZodiac {
-    /*transform-origin: 5000px 5000px;*/
+#orrery {
+    display: block;
+    max-height: 100vh;
+    width: 100vw;
+    margin: auto;
 }
 
 #ringZodiac #planets .block {
@@ -11,18 +14,16 @@
 }
 
 #ringZodiac #signs .label {
-    /*font-family: Arial Black, Arial Bold, Gadget, sans-serif;*/
-    font-size: 175;
+    font-size: 175px;
     font-weight: 900;
     text-anchor: middle;
     font-variant: small-caps;
     letter-spacing: 50px;
     stroke-width: 10;
-    /*filter: url(#boldenText);*/
 }
 
 #ringZodiac #houses .label {
-    font-size: 120;
+    font-size: 120px;
     stroke: black;
     text-anchor: middle;
     font-variant: small-caps;
@@ -43,7 +44,6 @@
 
 #ringZodiac #aspects path {
     stroke-width: 10;
-    /*stroke-dasharray: 100,100;*/
     stroke-linecap: round;
     fill: none;
 }

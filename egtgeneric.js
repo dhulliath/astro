@@ -58,6 +58,7 @@ const egtGeneric = {
         return dir;
     },
     'getFileAndCall': function (fileTarget, callback, callbackOptions) {
+        try {
         var apiHTTP = new XMLHttpRequest();
         apiHTTP.open("GET", fileTarget, true);
         //apiHTTP.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -68,6 +69,9 @@ const egtGeneric = {
             }
         };
         apiHTTP.send();
+        } catch(err) {
+            console.log(err);
+        }
     },
     'getCurrentURL': function () {
         return [location.protocol, '//', location.host, location.pathname].join('');
@@ -78,12 +82,12 @@ const egtGeneric = {
         window.history.pushState("some", "Title", url + "?" + queryString);
     },
     'createElementWithAttr': function (element, attributes) {
-        return this.createElementWithAttrNS(null, element, attributes);
-        /*var newElem = document.createElement(element);
+        //return this.createElementWithAttrNS(null, element, attributes);
+        var newElem = document.createElement(element);
         for (key in attributes) {
             newElem.setAttribute(key, attributes[key]);
         }
-        return newElem;*/
+        return newElem;
     },
     'createElementWithAttrNS': function (namespace, element, attributes) {
         var newElem = document.createElementNS(namespace, element);
