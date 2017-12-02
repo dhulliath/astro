@@ -1,0 +1,9 @@
+{
+    "paragraphs": [
+        "Strong on intuition. They are gifted with visions, precognitive dreams and the imagination. Their premonitions may be uncanny. If they develop these gifts it will serve them well. They may be attracted to practice the occult arts. They may be very religious and have a good understanding of educational theory. They may also want to help humanity as a whole. They like to travel and learn from their new surroundings.",
+        "May also be very eccentric or erratic in behavior. They may hold their own opinions on the law and religion. They could be rebellious in nature, and this may lead them into legal troubles. They may only see their side of the story, being oblivious to everyone else. They enjoy shocking people by what they say or do. They are adventurous and seek independence.",
+        "Loves science and philosophy. They love to keep abreast of the latest discoveries. They don't like conventional thinking; they like to start anew. They are not afraid to put themselves in danger to seek knowledge. They love to be free to say what they want and go where they wish. Generous, open-hearted and progressive, they may stun others with their ways.",
+        "Does not like the rigidity of academics, but they understand the need for it. They are optimistic. They may find that their own beliefs come from feeling the spirituality that lives in everything around them. They are interesting to talk to, and they are always direct. This person is very open to trying new things. They may clash with those who hold traditional scientific or religious views."
+    ],
+    "source": "http://www.alwaysastrology.com/uranus-in-sagittarius.html"
+}

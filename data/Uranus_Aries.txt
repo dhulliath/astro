@@ -1,0 +1,10 @@
+{
+    "paragraphs": [
+        "Original and independent. Full of ambition and energy, they are very resourceful. Challenges that would send most people running are handled easily by those with Uranus in Aries. They may come across as impulsive or abrupt, which can make them a bit hard to get along with, even though they didn't mean to upset anyone. They like to have a change of scenery, so may move frequently. They may be forced to change jobs or cities due to their rude manner.",
+        "May feel that there is nothing left for them to learn they know everything that is necessary. They may be impatient with the ideas of others. They may lose friends over this because they easily get into arguments over unimportant details. Their rather clinical, scientific ideas of children's education are meant to protect them from society's disorganization.",
+        "Well developed practical sense of business and finance that comes in handy. Combined with their inventive abilities and originality, they can be unbeatable. Overflowing with enthusiasm, intellectual prowess and energy, it is hard to repress their natural love of freedom. They are always ready to go back to school for more learning, no matter what their age.",
+        "Ability to intuit a new direction for humankind, as well as ways to implement it. Unfortunately, it has just as much chance to be a bad direction as a good direction. They are not afraid to pioneer new ideas. Some are blessed with healing talents.",
+        "Can also be a bit foolhardy, inconsistent and rebellious. Their temper can be legendary. In order to succeed, they should learn to control it and slow down. They can be plagued by headaches if they don't learn how to relax. This is a time marked with sudden, abrupt changes. If they are not careful, they may end up in accidents due to their haste."
+    ],
+    "source": "http://www.alwaysastrology.com/uranus-in-aries.html"
+}

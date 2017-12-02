@@ -1,0 +1,9 @@
+{
+    "paragraphs": [
+        "Ruled by strong emotions. Not only do they react according to their own emotions, but they can understand how others feel as well. They are drawn to activities that will involve them emotionally. Intensity is the key word for them.",
+        "Knows how to bring things that are hidden out into the light. They fight for human rights and they have a talent for helping the unconventional become accepted. Topics that capture their interest may include the occult, sex, the mind, death, genetic engineering and cloning.",
+        "May tend towards dark thoughts. They naturally filter out the good and happy things, focusing on the darker, secret motives of those around us. They may feel that they know best in every situation. On the other hand, individuals born with Pluto in Scorpio may try to remain positive so strongly that they find themselves in denial, finding out when it is too late about all that was happening right under their noses.",
+        "Their emotional courage, deep understanding and the ability to face their own wounds as well as those they have given to others can create a strong person you want on your side. They can be rather manipulative or controlling at times. They tend to question all the rules and may feel oppressed by the status quo. Their passionate natures incline them to experience as much as possible. They also have great willpower. They can focus on gaining wealth and power if so inclined."
+    ],
+    "source": "http://www.alwaysastrology.com/pluto-in-scorpio.html"
+}

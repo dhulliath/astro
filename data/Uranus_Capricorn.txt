@@ -1,0 +1,9 @@
+{
+    "paragraphs": [
+        "Ambitious and enterprising. They can be very serious minded, with a strong sense of responsibility. Their original business ideas will bring them success, especially when they work with electrical or aerial fields. They can also be erratic or eccentric. They have a strong stubborn streak and they may be quarrelsome. They may suffer great sorrow and trouble if they are not cautious. They are prone to sudden changes in employment and their surroundings.",
+        "Can be restless or impulsive. They may act before they think it through. They can be stubborn, eccentric and radical. They are good at balancing ambition, independence and their intellectual abilities. They are not afraid of challenges. They are tolerant of differences in people, and they have no problem treating them all equally. They are even tempered.",
+        "Responsible and is capable of handling power with ease. They are good people to hold a job needing the trust of the public. They have the talent to see the coming trends long in advance. They are not afraid to change procedures in order to achieve their goals. They are logical and have a great mind. They may be excellent politicians or business leaders. They will be capable of accomplishing great things for mankind and may make great material progress.",
+        "May come across as ultra conservative or as very reactionary. They are accepting of policies that are made to keep society safe and secure. They like things to be structured carefully with a conservative feel to them, though they are willing to change from tradition."
+    ],
+    "source": "http://www.alwaysastrology.com/uranus-in-capricorn.html"
+}

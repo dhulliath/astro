@@ -1,0 +1,10 @@
+{
+    "paragraphs": [
+        "Great intuitive skills and original ideas. They tend to work towards bettering humanity. They are devoted friends and truly want to help those in need. This unselfish behavior helps them to gain what they want in life. They may also be gifted with mechanical skills.",
+        "May also be erratic. They may have difficulties with their choice of friends, who may take advantage of them.",
+        "Likes to turn the world upside down. The revolution may be loud or peaceful, but they are part of the action either way. Naturally obliging with a pleasant personality, Aquarius Uranus is popular wherever they go. Some of their core beliefs may be a bit on the eccentric side. They may be very successful in electronics, logistic computers, space technology or anything of a scientific nature.",
+        "Likes to socialize, and they are naturals at networking. They love to be where the action is. Highly inventive, they can envision what will happen down the road. They can understand complicated social problems and come up with ideas to help ease them. They have a talent for conveying complex ideas to others. Resourceful Aquarius Uranus is a good person to have on your side.",
+        "Has the ability to help bring in new technologies and restructure communication. They are very intelligent, yet impersonal and detached. A few may be able to be more compassionate and understand what others are going through. Strong willed, Aquarius Uranus likes to work on their own, but being a loner isn't that bad if you enjoy it. They may use radical approaches to community, and they know how to get people to unite towards a common purpose. This ability to create an integrated whole can help humanity move forward. Working with obsolete social systems can really frustrate them."
+    ],
+    "source": "http://www.alwaysastrology.com/uranus-in-aquarius.html"
+}

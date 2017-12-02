@@ -1,0 +1,10 @@
+{
+    "paragraphs": [
+        "Original, versatile and intuitive. They like science, especially if it has anything to do with aviation, electricity or other related pursuits. Progressive and broad minded, they like to pioneer modern methods.",
+        "Can be popular and well liked, or be eccentric and a nuisance. They can be a liability or be accident prone. Some are interested in astrology and other occult studies. They are gifted with languages, and may attract unusual friends who are involved in the arts and sciences. They may have some complications with their education resulting in not completing their degrees which may cause unfavorable reviews of their work in later life.",
+        "Logical and loves to study. They would make an excellent communicator or writer about scientific subjects, logician or electronics expert. Unusual phenomena and topics attract them. They may tend to like change just for change's sake. They know how to promote change to the people, though if they attempt to remain logical and rational, it may backfire. They need to create a more intuitive form of communication.",
+        "May be restless or move frequently. They enjoy puzzles and casual conversation when they relax. They have the ability to grasp new concepts with ease and then communicate them with others. They are not afraid to make noise to get their point across. They like to study the science of communication, whether it be in psychology, sociology or metaphysics.",
+        "May actually shock others by putting forth strange ideas that others find socially unacceptable. They can lead the way to social change for some people, just like it did in the 1960s. The peace movements and other social changes were all fueled by those born with Uranus in Gemini through the 1940s during and after World War II."
+    ],
+    "source": "http://www.alwaysastrology.com/uranus-in-gemini.html"
+}

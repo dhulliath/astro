@@ -1,0 +1,10 @@
+{
+    "paragraphs": [
+        "Determined, impatient and rebellious. They don't care about traditions. Their strong personalities are assertive, and they often rub other people the wrong way. They have original ideas and are very inventive. They have talent in the educational and journalistic fields, as well as in entertainment.",
+        "Can be inconstant in love, often finding someone new before they've finished with the last. Courtship is usually fun and runs smoothly. They may have abrupt endings to their relationships, which may be the result of their own prejudices. They often suffer loss and sorrow with those they care about.",
+        "Wants to be distinguished in their career and be known as an exceptional individual. They are natural leaders, though they need to learn to control their temper. They often dash off into new adventures, heedless of the danger that may exist. They are a bit arrogant, and their mind is always working on new schemes and ideas. They need to beware of letting their ego grow too much. Taking their own creativity too seriously can disrupt their plans. Seeking the spotlight may complicate things.",
+        "Can be full of spirited fun or be strong willed. Some need to get their own way at all costs until they learn the lesson of self-mastery and begin to serve a higher purpose. They have much vitality, passion and insight. They enjoy being unique and outspoken. They may be a bit overdramatic, but it is in their nature. They often come up with unique approaches to parenting, sex and husbandry.",
+        "Has the potential to turn the world on its ear if all works out correctly. They can become prominent, showing their innate genius and using it to make a huge difference. Leo Uranus may also live a quieter life within their own circles, using their passions on smaller issues."
+    ],
+    "source": "http://www.alwaysastrology.com/uranus-in-leo.html"
+}

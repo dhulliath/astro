@@ -1,0 +1,10 @@
+{
+    "paragraphs": [
+        "Can be very original, with a strong scientific and mechanical talent. They may have a strong sense of intuition. Many have a good head for business, which will make them successful financially. They may also be afflicted by many ailments, or become a hypochondriac. They may have difficulties dealing with employers or suffer other limits to their ambitions.",
+        "May find a great career in government or in the public eye. They are interested in new techniques for health, the environment and hygiene. They have a talent for helping heal the soil, air or water that they may not realize. They could just as easily teach, go into engineering or be a CEO in a field they are interested in. Scientific oddities are interesting to them, as are historical curiosities.",
+        "Quiet on the outside, but they can impress others with their sense of control. Inside they may be literally seething with curiosity. They are independent, and somewhat eccentric. Their intellectual capacity is excellent.",
+        "Interested in the healing power of nature and the power of the mind. They may be into the organic movement, even if is just because they have their own little garden in the back yard. They have good powers of analysis, and make good researchers or scientists. They want to help the common person, struggling to make ends meet. Alternate lifestyles appeal to them, and they have a talent for salvaging almost anything. They spend a lot of time caring for others, and relax by working.",
+        "Seeks to improve their work one detail at a time. They are attracted to both the newest technologies and what is most natural. This can create a conflict, because part of them believes that what is new is the best, while another part teaches them that what is natural is best."
+    ],
+    "source": "http://www.alwaysastrology.com/uranus-in-virgo.html"
+}

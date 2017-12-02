@@ -39,7 +39,7 @@ body {
 
 .objectInterpretation .definitions .aspectOpposition .header::before {
     content: '';
-    background: url('svg/Opposition-symbol.svg');
+    background: url('svg/Aspect-opposition.svg');
     background-size: 15px 15px;
     background-repeat: no-repeat;
     display: inline-block;
@@ -49,7 +49,7 @@ body {
 
 .objectInterpretation .definitions .aspectConjunction .header::before {
     content: '';
-    background: url('svg/Conjunction-symbol.svg');
+    background: url('svg/Aspect-conjunction.svg');
     background-size: 15px 15px;
     background-repeat: no-repeat;
     display: inline-block;
@@ -59,7 +59,7 @@ body {
 
 .objectInterpretation .definitions .aspectTrine .header::before {
     content: '';
-    background: url('svg/Trine-symbol.svg');
+    background: url('svg/Aspect-trine.svg');
     background-size: 15px 15px;
     background-repeat: no-repeat;
     display: inline-block;
@@ -69,7 +69,7 @@ body {
 
 .objectInterpretation .definitions .aspectSextile .header::before {
     content: '';
-    background: url('svg/Sextile-symbol.svg');
+    background: url('svg/Aspect-sextile.svg');
     background-size: 15px 15px;
     background-repeat: no-repeat;
     display: inline-block;
@@ -79,7 +79,7 @@ body {
 
 .objectInterpretation .definitions .aspectSquare .header::before {
     content: '';
-    background: url('svg/Square-symbol.svg');
+    background: url('svg/Aspect-square.svg');
     background-size: 15px 15px;
     background-repeat: no-repeat;
     display: inline-block;
