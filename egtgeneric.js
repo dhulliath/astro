@@ -82,7 +82,6 @@ const egtGeneric = {
         window.history.pushState("some", "Title", url + "?" + queryString);
     },
     'createElementWithAttr': function (element, attributes) {
-        //return this.createElementWithAttrNS(null, element, attributes);
         var newElem = document.createElement(element);
         for (key in attributes) {
             newElem.setAttribute(key, attributes[key]);
@@ -91,7 +90,6 @@ const egtGeneric = {
     },
     'createElementWithAttrNS': function (namespace, element, attributes) {
         var newElem = document.createElementNS(namespace, element);
-        //egtGeneric.setAttributesNS(namespace, newElem, attributes);
         for (key in attributes) {
             newElem.setAttributeNS(null, key, attributes[key]);
         }
