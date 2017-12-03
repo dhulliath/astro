@@ -17,6 +17,18 @@ var egtAstro = {
             timezone = "UTC";
         }
 
+        var QueryString = {
+            "longitude": longitude,
+            "latitude": latitude,
+            "minute": minute,
+            "hour": hour,
+            "day": day,
+            "month": month,
+            "year": year,
+            "timezone": timezone,
+            "ID": id
+        };
+
         var apiHTTP = new XMLHttpRequest();
         apiHTTP.open("POST", "https://astro.earlgraytease.com/api.php", true);
         apiHTTP.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -27,19 +39,8 @@ var egtAstro = {
                 callback(AstroData);
             }
         }
-        var QueryString = egtGeneric.encodeQueryData({
-            "longitude": longitude,
-            "latitude": latitude,
-            "minute": minute,
-            "hour": hour,
-            "day": day,
-            "month": month,
-            "year": year,
-            "timezone": timezone,
-            "ID": id
-        });
-        console.log(QueryString);
-        apiHTTP.send(QueryString);
+        
+        apiHTTP.send(egtGeneric.encodeQueryData(QueryString));
         
     },
     'longitudeToZodiacAddress': function (longitude) {

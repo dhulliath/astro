@@ -120,8 +120,7 @@
             <div class="ui button" id="chartButtonCancel">
                 Cancel
             </div>
-            <div class="fb-share-button" data-href="https://astro.earlgraytease.com/" data-layout="button" data-size="small"
-                data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fastro.earlgraytease.com%2F&amp;src=sdkpreparse">Share</a></div>
+            <div class="fb-share-button" data-href="https://astro.earlgraytease.com/" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fastro.earlgraytease.com%2F&amp;src=sdkpreparse">Share</a></div>
         </div>
     </div>
     <div id="interpretations">
@@ -176,17 +175,28 @@
                 $("#chartTimeHour").val(),
                 $("#chartTimeMinute").val(), true, 'v3beta',
                 function (data) {
-                    egtGeneric.updatePageURL(data['queryString']);
+                    var queryReplacer = {'longitude': 'o', 'latitude': 'a', 'minute':'m','hour':'h','day':'D','month':'M','year':'Y'}
+                    var queryArgs = {};
+                    for (arg in data['queryString']) {
+                        if (queryReplacer[arg]) {
+                            queryArgs[queryReplacer[arg]] = data['queryString'][arg];
+                        }
+                    }
+                    queryArgs['n'] = $("#chartName").val();
+                    egtGeneric.updatePageURL('q='+egtGeneric.uriEncode(JSON.stringify(queryArgs)));
                     updateChart(Orrery, OrreryInterpret, data);
                 });
         }
 
         function reverseGeocode(latitude, longitude, updateQuery) {
-            egtGeneric.getFileAndCall('https://maps.googleapis.com/maps/api/geocode/json?latlng='+latitude+','+longitude,
-                _updateReverseGeocode,
-                {'updateQuery':updateQuery,
-                'mimeType': 'application/json'});
+            egtGeneric.getFileAndCall('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude + ',' +
+                longitude,
+                _updateReverseGeocode, {
+                    'updateQuery': updateQuery,
+                    'mimeType': 'application/json'
+                });
         }
+
         function _updateReverseGeocode(data, options) {
             var results = JSON.parse(data);
             var parsed = [];
@@ -195,9 +205,15 @@
                     for (key3 in results['results'][key1]['address_components'][key2]['types']) {
                         var targetIndex = -1;
                         var targetType = results['results'][key1]['address_components'][key2]['types'][key3]
-                        if (targetType == 'administrative_area_level_1') {targetIndex = 1;}
-                        if (targetType == 'locality') {targetIndex = 0;}
-                        if (targetType == 'country') {targetIndex = 2;}
+                        if (targetType == 'administrative_area_level_1') {
+                            targetIndex = 1;
+                        }
+                        if (targetType == 'locality') {
+                            targetIndex = 0;
+                        }
+                        if (targetType == 'country') {
+                            targetIndex = 2;
+                        }
 
                         if (targetIndex >= 0) {
                             parsed[targetIndex] = results['results'][key1]['address_components'][key2]['long_name'];
@@ -209,16 +225,29 @@
         }
 
         function loadFromGetArgs() {
-            $("#chartDateDay").val(egtGeneric.getUrlParameter("day"));
-            $("#chartDateMonth").val(egtGeneric.getUrlParameter("month"));
-            $("#chartDateYear").val(egtGeneric.getUrlParameter("year"));
-            $("#chartTimeHour").val(egtGeneric.getUrlParameter("hour"));
-            $("#chartTimeMinute").val(egtGeneric.getUrlParameter("minute"));
-            $("#chartName").val(egtGeneric.getUrlParameter("chartName"));
-
-            $('input#chartLatitude').val(egtGeneric.getUrlParameter("latitude"));
-            $('input#chartLongitude').val(egtGeneric.getUrlParameter("longitude"));
-
+            var uriKey = egtGeneric.getUrlParameter("q");
+            if (uriKey) {
+                var query = egtGeneric.uriDecode(uriKey);
+            } else {
+                var query = {
+                    'D': egtGeneric.getUrlParameter("day"),
+                    'M': egtGeneric.getUrlParameter("month"),
+                    'Y': egtGeneric.getUrlParameter("year"),
+                    'h': egtGeneric.getUrlParameter("hour"),
+                    'm': egtGeneric.getUrlParameter("minute"),
+                    'n': egtGeneric.getUrlParameter("chartName"),
+                    'a': egtGeneric.getUrlParameter("latitude"),
+                    'o': egtGeneric.getUrlParameter("longitude")
+                }
+                $("#chartDateDay").val(query['D']);
+                $("#chartDateMonth").val(query['M']);
+                $("#chartDateYear").val(query['Y']);
+                $("#chartTimeHour").val(query['h']);
+                $("#chartTimeMinute").val(query['m']);
+                $("#chartName").val(query['n']);
+                $('input#chartLatitude').val(query['a']);
+                $('input#chartLongitude').val(query['o']);
+            }
             loadFromInputs(false);
         }
 
