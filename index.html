@@ -123,11 +123,54 @@
             <div class="fb-share-button" data-href="https://astro.earlgraytease.com/" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fastro.earlgraytease.com%2F&amp;src=sdkpreparse">Share</a></div>
         </div>
     </div>
+    <div id="modalAbout" class="ui modal">
+        <div class="header">
+            <i class="window close icon"></i> About
+        </div>
+        <div class="scrolling content">
+            This is still a work in progress. Interpretations are in various states of legibility and completeness. I'm interested in
+            receiving feedback regarding design and which information is provided. I'm also interested in anything which
+            causes this not to work. The bulk of interpretations listed here have been appropriated from other sources, they
+            will be removed at the author's request.
+            <h4 class="ui dividing header">Changelog</h4>
+            <div class="ui relaxed list">
+                <div class="item">
+                    <div class="header">November 14, 2017</div>
+                    Initial public release
+                </div>
+                <div class="item">
+                    <div class="header">November 15, 2017</div>
+                    Refined render engine, begin adding retrograde and house data
+                </div>
+                <div class="item">
+                    <div class="header">November 16, 2017</div>
+                    Mirrored the chart because dumb me didn't realize it was upside-down
+                </div>
+                <div class="item">
+                    <div class="header">December 2, 2017</div>
+                    Corrected webkit render error.<br/>
+                    Added more sign data.
+                </div>
+                <div class="item">
+                    <div class="header">December 3, 2017</div>
+                    Created interpretation link bar.<br/>
+                    Chart zooms on link bar item clicking.<br/>
+                    Chart reverse looks up city from coordinates, start of short URL system.
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <div class="ui button close">Close</div>
+        </div>
+    </div>
     <div id="interpretations">
         <div class="navb">
             <a class="nave" href="#" id="btnOpenChartModal">
-                    <img src="svg/Icon-plus.svg" alt="New Chart" />
-                </a>
+                <img src="svg/Icon-plus.svg" alt="New Chart" />
+            </a>
+            <a class="nave" href="#" id="btnOpenAbout">
+                <img src="svg/Icon-question.svg" alt="about" />
+            </a>
         </div>
     </div>
     <script>
@@ -175,7 +218,15 @@
                 $("#chartTimeHour").val(),
                 $("#chartTimeMinute").val(), true, 'v3beta',
                 function (data) {
-                    var queryReplacer = {'longitude': 'o', 'latitude': 'a', 'minute':'m','hour':'h','day':'D','month':'M','year':'Y'}
+                    var queryReplacer = {
+                        'longitude': 'o',
+                        'latitude': 'a',
+                        'minute': 'm',
+                        'hour': 'h',
+                        'day': 'D',
+                        'month': 'M',
+                        'year': 'Y'
+                    }
                     var queryArgs = {};
                     for (arg in data['queryString']) {
                         if (queryReplacer[arg]) {
@@ -183,7 +234,7 @@
                         }
                     }
                     queryArgs['n'] = $("#chartName").val();
-                    egtGeneric.updatePageURL('q='+egtGeneric.uriEncode(JSON.stringify(queryArgs)));
+                    egtGeneric.updatePageURL('q=' + egtGeneric.uriEncode(JSON.stringify(queryArgs)));
                     updateChart(Orrery, OrreryInterpret, data);
                 });
         }
@@ -276,9 +327,16 @@
 
         $('document').ready(function () {
             $('#inputControls').modal();
+            $('#modalAbout').modal();
             $('#btnOpenChartModal').click(function () {
                 $('#inputControls').modal('show');
             });
+            $('#btnOpenAbout').click(function () {
+                $('#modalAbout').modal('show');
+            });
+            $('#modalAbout .close').click(function() {
+                $('#modalAbout').modal('hide');
+            })
 
             loadFromGetArgs();
             reverseGeocode($('input#chartLatitude').val(), $('input#chartLongitude').val(), '#chartBirthplace');
