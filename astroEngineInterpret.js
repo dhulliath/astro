@@ -110,10 +110,14 @@ var AstroEngineInterpret = function (parentQuery) {
     };
     var _drawTable = function () {
         try {
+            objectDOM['navbar'] = [];
+            objectDOM['navbar']['objects'] = [];
+            objectDOM['navbar']['block'] = objectDOM['_parent'].querySelector('.navb');
+            //objectDOM['_parent'].appendChild(objectDOM['navbar']['block'] = egtGeneric.createElementWithAttr('div', {'class':'navb'}));
             for (keyRender in DATA['render']['planetDescs']) {
                 if (!DATA['render']['planetDescs'].hasOwnProperty(keyRender)) continue;
+                //create description block
                 var commonObject = [];
-
                 objectDOM['_parent'].appendChild(commonObject['group'] = egtGeneric.createElementWithAttr('div', {
                     /*'id': baseID + keyRender,*/
                     'class': 'objectInterpretation',
@@ -122,6 +126,7 @@ var AstroEngineInterpret = function (parentQuery) {
                 commonObject['group'].appendChild(commonObject['objectGroup'] = egtGeneric.createElementWithAttr('div', {
                     'class': 'headerContainer'
                 }));
+                commonObject['objectGroup'].appendChild(egtGeneric.createElementWithAttr('a', {'name': 'Object'+keyRender}));
                 commonObject['objectGroup'].appendChild(commonObject['objectHeader'] = egtGeneric.createElementWithAttr('h2', {
                     'class': 'mheader'
                 }));
@@ -133,10 +138,8 @@ var AstroEngineInterpret = function (parentQuery) {
                 } else {
                     commonObject['objectHeader'].innerHTML = keyRender;
                 }
-
                 commonObject['zodiac'] = _createGenericTextBlock('planet', 'Zodiac');
                 commonObject['children'].appendChild(commonObject['zodiac']['block']);
-
                 if (DATA['render']['planetDescs'][keyRender]['showRetrograde']) {
                     commonObject['retrograde'] = _createGenericTextBlock('retrograde', 'Retrograde');
                     commonObject['children'].appendChild(commonObject['retrograde']['block']);
@@ -147,6 +150,10 @@ var AstroEngineInterpret = function (parentQuery) {
                     commonObject['children'].appendChild(commonObject['house']['block']);
                 }
                 objectDOM[keyRender] = commonObject;
+                //create navigation block
+                objectDOM['navbar']['objects'][keyRender] = [];
+                objectDOM['navbar']['block'].appendChild(objectDOM['navbar']['objects'][keyRender]['block'] = egtGeneric.createElementWithAttr('a',{'class':'nave', 'href':'#', 'd':keyRender}));
+                objectDOM['navbar']['objects'][keyRender]['block'].appendChild(objectDOM['navbar']['objects'][keyRender]['img'] = egtGeneric.createElementWithAttr('img',{'alt': keyRender,'src':'svg/Planet-'+String(keyRender).toLowerCase()+'.svg'}));
             }
         } catch (err) {
             console.log(key);
@@ -155,10 +162,24 @@ var AstroEngineInterpret = function (parentQuery) {
             console.log(DATA);
         }
     };
+    var _focusOnPlanet = function(planet) {
+        for (keyDesc in objectDOM['navbar']['objects']) {
+            objectDOM[keyDesc]['group'].classList.add('hidden');
+        }
+        objectDOM[planet]['group'].classList.remove('hidden');
+    };
+    var _focusNone = function() {
+        for (keyDesc in objectDOM['navbar']['objects']) {
+            objectDOM[keyDesc]['group'].classList.remove('hidden');
+        }
+    };
 
+    this.DOMobjects = objectDOM;
     this.addAspect = _addAspect;
     this.clearAspects = _clearAspects;
     this.drawTable = _drawTable;
+    this.focusOnPlanet = _focusOnPlanet;
+    this.focusNone = _focusNone;
     this.loadData = _loadData;
     this.updateChart = _updateChart;
     this.updateDOM = _updateDOM

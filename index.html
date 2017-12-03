@@ -50,58 +50,80 @@
 
     <svg id="orrery" xmlns="http://www.w3.org/2000/svg">
     </svg>
-    <div class="ui container">
-        <div id="inputControls" class="ui grid stackable segment">
-            <div id="Name" class="eight wide column">
-                <h3 class="ui header">Name</h3>
-                <div class="ui input fluid">
-                    <input type="text" id="chartName" />
+    <div id="inputControls" class="ui modal">
+        <div class="header">
+            Create Natal Chart
+        </div>
+        <div class="content">
+            <form class="ui form">
+                <div class="field">
+                    <label>Name</label>
+                    <div class="field">
+                        <input type="text" id="chartName" />
+                    </div>
                 </div>
-            </div>
-            <div id="Location" class="eight wide column">
-                <h3 class="ui header">Birthplace</h3>
-                <div class="ui input fluid">
-                    <input type="text" id="chartBirthplace" autocomplete="off" />
+                <div class="field">
+                    <label>Birthplace</label>
+                    <div class="field">
+                        <input type="text" id="chartBirthplace" autocomplete="off" />
+                        <input type="hidden" id="chartLatitude" />
+                        <input type="hidden" id="chartLongitude" />
+                        <input type="hidden" id="chartTZOffset" />
+                    </div>
                 </div>
-                <input type="hidden" id="chartLatitude" />
-                <input type="hidden" id="chartLongitude" />
-                <input type="hidden" id="chartTZOffset" />
-                <span id="dataLatitude"></span>
-            </div>
-            <div id="Date" class="eight wide column">
-                <h3 class="ui header">Date</h3>
-                <select class="ui dropdown" id="chartDateDay">
+                <h4 class="ui dividing header">Birth Date</h4>
+                <div class="three fields">
+                    <div class="field">
+                        <label>Day</label>
+                        <select class="ui dropdown" id="chartDateDay">
                         <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option>
                     </select>
-                <select class="ui dropdown" id="chartDateMonth">
+                    </div>
+                    <div class="field">
+                        <label>Month</label>
+                        <select class="ui dropdown" id="chartDateMonth">
                         <option value="1">January</option><option value="2">February</option><option value="3">March</option><option value="4">April</option><option value="5">May</option><option value="6">June</option><option value="7">July</option><option value="8">August</option><option value="9">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option>
                     </select>
-                <div class="ui input">
-                    <input id="chartDateYear" class="input" type="number" placeholder="year">
+                    </div>
+                    <div class="field">
+                        <label>Year</label>
+                        <input id="chartDateYear" class="input" type="number" placeholder="year">
+                    </div>
                 </div>
-            </div>
-            <div id="Time" class="eight wide column">
-                <h3 class="ui header">Time</h3>
-                <select class="ui dropdown" id="chartTimeHour">
+                <div class="two fields">
+                    <div class="field">
+                        <label>Hour</label>
+                        <select class="ui dropdown" id="chartTimeHour">
                         <option value="">Hour</option>
                         <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13(1PM)</option><option value="14">14(2PM)</option><option value="15">15(3PM)</option><option value="16">16(4PM)</option><option value="17">17(5PM)</option><option value="18">18(6PM)</option><option value="19">19(7PM)</option><option value="20">20(8PM)</option><option value="21">21(9PM)</option><option value="22">22(10PM)</option><option value="23">23(11PM)</option>
                     </select>
-                <select class="ui dropdown" id="chartTimeMinute">
+                    </div>
+                    <div class="field">
+                        <label>Minute</label>
+                        <select class="ui dropdown" id="chartTimeMinute">
                         <option value="">Minute</option>
                         <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option>
                     </select>
-            </div>
-            <div id="Buttons" class="eight wide column">
-                <button class="positive ui button" id="chartButtonSubmit">
-                        Generate
-                    </button>
-            </div>
-            <div id="MediaButtons" class="eight wide column">
-                <div class="fb-share-button" data-href="https://astro.earlgraytease.com/" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fastro.earlgraytease.com%2F&amp;src=sdkpreparse">Share</a></div>
-            </div>
+                    </div>
+                </div>
+            </form>
         </div>
-        <div id="interpretations">
-            
+        <div id="Buttons" class="actions">
+            <div class="positive ui button" id="chartButtonSubmit">
+                Generate
+            </div>
+            <div class="ui button" id="chartButtonCancel">
+                Cancel
+            </div>
+            <div class="ui button fb-share-button" data-href="https://astro.earlgraytease.com/" data-layout="button" data-size="small"
+                data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fastro.earlgraytease.com%2F&amp;src=sdkpreparse">Share</a></div>
+        </div>
+    </div>
+    <div id="interpretations">
+        <div class="navb">
+            <a class="nave" href="#" id="btnOpenChartModal">
+                    <img src="svg/Icon-plus.svg" alt="New Chart" />
+                </a>
         </div>
     </div>
     <script>
@@ -122,6 +144,14 @@
 
         OrreryInterpret.loadData('render', DataRender);
         OrreryInterpret.drawTable();
+        for (renderKey in OrreryInterpret.DOMobjects['navbar']['objects']) {
+            OrreryInterpret.DOMobjects['navbar']['objects'][renderKey]['block'].addEventListener('click', function () {
+                var goKey = this.getAttribute('d');
+                console.log(goKey);
+                Orrery.focusOnPlanet(goKey);
+                OrreryInterpret.focusOnPlanet(goKey);
+            });
+        }
 
         /*egtAstro.queryAPI(49, -123, 1987, 11, 8, 16, 30, true, 'v3beta', function (data) {
             updateChart(Orrery, OrreryInterpret, data);
@@ -189,9 +219,14 @@
         }
 
         $('document').ready(function () {
+            $('#inputControls').modal();
+            $('#btnOpenChartModal').click(function () {
+                $('#inputControls').modal('show');
+            });
 
             loadFromGetArgs();
             $('#chartButtonSubmit').click(function () {
+                $('#inputControls').modal('hide');
                 loadFromInputs();
             });
         });

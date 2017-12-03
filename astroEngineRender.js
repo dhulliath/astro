@@ -44,7 +44,7 @@ var AstroEngineRender = function (svgid) {
             'id': 'gradient' + id + 'Fill'
         }));
         return commonObjects;
-    }
+    };
     //Create a planet object using _createCommonObjectWithGradient as base, add circle object
     var _createPlanetObject = function (planet) {
         //figure out how many degrees we need for enough label space
@@ -57,12 +57,14 @@ var AstroEngineRender = function (svgid) {
                 'font-size': (DATA['planets'][planet]['orb'] * 0.8),
                 'fill': DATA['planets'][planet]['accentcolor']
             }, {
-                'startOffset': DATA['planets'][planet]['orb'] / 2
-            }, egtSVG.describeArc(5000, 5000, DATA['planets'][planet]['radius'] + DATA['planets'][planet]['arcRadius'] - (DATA['planets'][planet]['orb'] / 4), 362 - arcDegrees, 358), DATA['planets'][planet]['displayName'],
+                'startOffset': '100%', //DATA['planets'][planet]['orb'] / 2,
+                'text-anchor': 'end'
+            }, egtSVG.describeArc(5000, 5000, DATA['planets'][planet]['radius'] - DATA['planets'][planet]['arcRadius'] + (DATA['planets'][planet]['orb'] / 4), 358, 360 - arcDegrees, 1), DATA['planets'][planet]['displayName'],
             'linear', {
                 '0%': DATA['planets'][planet]['color'],
                 '100%': DATA['planets'][planet]['accentcolor']
             });
+            //egtSVG.describeArc(5000, 5000, DATA['planets'][planet]['radius'] + DATA['planets'][planet]['arcRadius'] - (DATA['planets'][planet]['orb'] / 4), 362 - arcDegrees, 358)
         //make a circle cause this is the only thing that uses circles
         objectDOM['planet'][planet]['group'].appendChild(objectDOM['planet'][planet]['circle'] = egtGeneric.createElementWithAttrNS(NAMESPACES.svg, 'circle', {
             'stroke': DATA['planets'][planet]['color'],
@@ -116,7 +118,6 @@ var AstroEngineRender = function (svgid) {
             'stroke': DATA['zodiacs'][sign]['color'],
             'fill': 'url(#gradient' + DATA['zodiacs'][sign]['planetExaltation'] + 'Fill)',
             'transform': 'rotate(' + coordParse((zodiacWidth * DATA['zodiacs'][sign]['order']) - (zodiacWidth / 2)) + ' 5000 5000)',
-            //'transform': 'rotate(' + (((zodiacCount + 1) - (DATA['zodiacs'][sign]['order'] * 2)) * zodiacWidth) + ' 5000 5000)',
             'd': DATA['zodiacs'][sign]['pathGlyph']
         }), objectDOM['zodiac'][sign]['label']);
 
@@ -150,6 +151,23 @@ var AstroEngineRender = function (svgid) {
             _updateAscendant(longitude);
         }
     };
+    //Focus on a Planet - Rotate chart and Zoom
+    var _focusOnPlanet = function(planet) {
+        for (planetKey in objectDOM['planet']) {
+            objectDOM['planet'][planetKey]['group'].classList.remove('focused');
+        }
+        objectDOM['ring'].setAttributeNS(null, 'transform', 'scale(2) translate(-2500) rotate(' + (DATA['planets'][planet]['longitude'] ) + ' 5000 5000)');
+        objectDOM['planet'][planet]['group'].classList.add('focused');
+        objectSVG.setAttribute('viewBox', '0 0 10000 7000');
+    };
+    //Remove Focus from a planet
+    var _focusNone = function() {
+        for (planetKey in objectDOM['planet']) {
+            objectDOM['planet'][planetKey]['group'].classList.remove('focused');
+        }
+        objectSVG.setAttribute('viewBox', '0 0 10000 10000');
+        _updateAscendant(DATA['planets']['Ascendant']['longitude']);
+    }
     //Rotate the chart so Ascendant is on the left
     var _updateAscendant = function (longitude) {
         objectDOM['ring'].setAttributeNS(null, 'transform', 'rotate(' + (longitude - 90) + ' 5000 5000)');
@@ -199,7 +217,7 @@ var AstroEngineRender = function (svgid) {
         ];
         var largeArcFlag = Math.abs(DATA['planets'][planet1]['longitude'] - DATA['planets'][planet2]['longitude']) < 180 ? "0" : "1";
         var invertFlag = angle >= 0 ? "1" : "0";
-        var radiiMult = 5;
+        var radiiMult = 2;
         objectDOM['aspects'].appendChild(objectDOM['aspect'][planet1 + planet2] = egtGeneric.createElementWithAttrNS(NAMESPACES.svg, 'path', {
             'id': planet1 + planet2,
             'class': type,
@@ -278,14 +296,17 @@ var AstroEngineRender = function (svgid) {
     };
 
     //make these functions callable from the outside
-    this.updateHouse = _updateHouse;
-    this.updatePlanet = _updatePlanet;
-    this.updateChart = _updateChart;
-    this.drawAspect = _drawAspect;
-    this.clearAspects = _clearAspects;
-    this.clearInterceptions = _clearInterceptions;
     this.addDuplication = _addDuplication;
     this.addInterception = _addInterception;
+    this.clearAspects = _clearAspects;
+    this.clearInterceptions = _clearInterceptions;
+    this.drawAspect = _drawAspect;
+    this.focusOnPlanet = _focusOnPlanet;
+    this.focusNone = _focusNone;
+    this.updateChart = _updateChart;
+    this.updateHouse = _updateHouse;
+    this.updatePlanet = _updatePlanet;
+    
     this.dataDump = function () {
         console.log(DATA);
         console.log(objectDOM);

@@ -1,6 +1,6 @@
 #orrery {
     display: block;
-    max-height: 100vh;
+    max-height: 80vh;
     width: 100vw;
     margin: auto;
 }
@@ -11,6 +11,15 @@
 }
 #ringZodiac .label {
     font-family: Arial Black, Arial Bold, Gadget, sans-serif;
+}
+#ringZodiac .focused .label {
+    font-weight: bolder;
+}
+#ringZodiac #planets circle {
+    stroke-width: 30;
+}
+#ringZodiac #planets .focused circle {
+    stroke-width:60;
 }
 
 #ringZodiac #signs .label {
@@ -43,7 +52,7 @@
 }
 
 #ringZodiac #aspects path {
-    stroke-width: 10;
+    stroke-width: 15;
     stroke-linecap: round;
     fill: none;
 }
