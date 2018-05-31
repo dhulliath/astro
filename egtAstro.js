@@ -30,7 +30,8 @@ var egtAstro = {
         };
 
         var apiHTTP = new XMLHttpRequest();
-        apiHTTP.open("POST", "https://astro.earlgraytease.com/api.php", true);
+        var qRequest = "https://api.earlgraytease.com/ephemeris/?" + egtGeneric.encodeQueryData(QueryString)
+        apiHTTP.open("GET", qRequest, true);
         apiHTTP.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         apiHTTP.onreadystatechange = function () {
             if (apiHTTP.readyState == 4 && apiHTTP.status == 200) {

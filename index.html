@@ -205,6 +205,8 @@
         }
 
         function updateChart(chartObj, interpObj, data) {
+            chartObj.focusNone();
+            interpObj.focusNone();
             chartObj.updateChart(data);
             interpObj.updateChart(data);
         }
